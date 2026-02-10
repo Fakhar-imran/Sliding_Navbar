@@ -1,0 +1,126 @@
+body {
+  overflow-x: hidden;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80px;
+  background-color: rgb(66, 65, 65);
+}
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 900;
+}
+#overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+.logo {
+  margin: 0 12px 0 80px;
+  color: black;
+  font-weight: 600;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: larger;
+  width: 50vw;
+  color: white;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  margin: 0 23px 0 23px;
+  width: 40vw;
+}
+
+.nav ul li {
+  margin: 0 5px;
+  text-wrap: nowrap;
+  color: white;
+}
+
+.fa-bars {
+  color: white;
+  font-size: 30px;
+  visibility: hidden;
+  margin-right: 23px;
+  cursor: pointer;
+}
+
+.mobNav {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(71, 69, 69);
+  width: 70vw;
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  transform: translateX(100%);
+  transition: all 0.4s ease-out;
+  z-index: 1000;
+}
+.mobNav.active {
+  transform: translateX(0);
+}
+.fa-close {
+  align-self: self-end;
+  color: white;
+  margin: 20px 12px;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+.mobNav ul {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  color: white;
+}
+.mobNav ul li {
+  padding: 22px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.mobNav ul li:hover {
+  background-color: rgb(145, 143, 143);
+}
+@media all and (max-width: 750px) {
+  .nav ul li {
+    font-size: 12px;
+  }
+}
+@media all and (max-width: 600px) {
+  .nav ul li {
+    display: none;
+  }
+  .fa-bars {
+    visibility: visible;
+  }
+  .logo {
+    margin: 0 0 0 20px;
+    font-size: 20px;
+    text-wrap: nowrap;
+    width: auto;
+  }
+}
